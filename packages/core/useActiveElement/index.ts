@@ -31,6 +31,7 @@ export function useActiveElement<T extends HTMLElement>(
     let element = document?.activeElement
     if (deep) {
       while (element?.shadowRoot)
+        // 获取shadowRoot中的activeElement
         element = element?.shadowRoot?.activeElement
     }
     return element
